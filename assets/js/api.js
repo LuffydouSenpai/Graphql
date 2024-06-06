@@ -47,7 +47,6 @@ async function getDataAPIZone01(url = "", query = {}){
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     } else {
-        console.log(userToken);
     }
 
     return response.json(); // Assuming the response is JSON
