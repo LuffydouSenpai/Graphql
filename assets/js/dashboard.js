@@ -3,6 +3,7 @@ import {
 } from "./api.js";
 
 const userToken = sessionStorage.getItem('userToken');
+console.log("token",userToken);
 
 if (userToken == "") {
     window.location.href = `/index.html`;
