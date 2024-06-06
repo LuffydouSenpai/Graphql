@@ -5,9 +5,11 @@ import {
 const userToken = sessionStorage.getItem('userToken');
 console.log("token",userToken);
 
-if (userToken == "") {
-    window.location.href = `/index.html`;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    if (!sessionStorage.getItem('userToken')) {
+        window.location.href = 'login.html'; // Redirigez vers la page de connexion ou une autre page appropriée
+    }
+});
 
 const urlData = "https://zone01normandie.org/api/graphql-engine/v1/graphql"
 
