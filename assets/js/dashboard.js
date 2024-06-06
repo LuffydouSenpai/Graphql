@@ -2,12 +2,14 @@ import {
     getDataAPIZone01,
 } from "./api.js";
 
-const userToken = sessionStorage.getItem('userToken');
-console.log("token",userToken);
 
-document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem('userToken')) {
         window.location.href = 'login.html'; // Redirigez vers la page de connexion ou une autre page appropriée
+    } else {
+        const userToken = sessionStorage.getItem('userToken');
+        console.log("token", userToken);
     }
 });
 
@@ -417,7 +419,7 @@ function skillProg(responseData) {
     data.sort((a, b) => a.value - b.value);
 
 
-    data.forEach(element =>{
+    data.forEach(element => {
         const sliceAngle = (element.value / total) * 2 * Math.PI;
         const x1 = Math.cos(cumulativeAngle);
         const y1 = Math.sin(cumulativeAngle);
@@ -440,11 +442,11 @@ function skillProg(responseData) {
         document.getElementById("slices").appendChild(path);
     })
 
-    
+
     const legendGraph = document.getElementById('legendGraphSkills');
 
     data.forEach(element => {
-        
+
         const divOneLegend = document.createElement('div')
         divOneLegend.className = "oneLegendSkills"
         legendGraph.appendChild(divOneLegend)
