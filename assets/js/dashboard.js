@@ -126,8 +126,6 @@ function ratioAudits(responseData) {
     let rationForm = parseFloat(ration.toFixed(1));
 
     document.getElementById('pRatio').innerText = rationForm
-
-    console.log("ratio", rationForm);
 }
 
 function xpAmount(responseData) {
@@ -408,10 +406,6 @@ function skillProg(responseData) {
         dataValue.push(element.value)
     });
 
-    console.log(dataValue);
-
-
-    
 
     const total = dataValue.reduce((acc, val) => acc + val, 0);
     let cumulativeAngle = 0;
