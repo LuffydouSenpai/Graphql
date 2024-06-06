@@ -1,0 +1,46 @@
+#navHeader {
+    z-index: 9;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.200);
+    display: flex;
+    justify-content: space-around;
+}
+
+#user{
+    display: flex;
+    width: 15rem;
+    align-items: center;
+}
+
+#loginName{
+    color: white;
+    font-size: 2rem;
+}
+
+#divDisconnect {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#divDisconnect img {
+    height: 60%;
+    color: white;
+}
+
+.power-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.power-icon:hover {
+    transform: scale(1.1);
+    fill: red;
+    /* Change la couleur au survol */
+}

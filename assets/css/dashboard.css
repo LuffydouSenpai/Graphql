@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #1a191c;
+}
+
+#backgroundIMG {
+    z-index: -1;
+    background: url(../img/01-trame.svg) center center / cover;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    position: fixed;
+    /* display: block;
+    unicode-bidi: isolate; */
+}
+
+#mainSide {
+    display: flex;
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    height: 100vh;
+    width: 70%;
+    margin: 5rem auto 0 auto;
+}
+
+.sectionDashboard {
+    min-width: 50%;
+    background-color: #272529;
+    min-height: 30vh;
+}
+
+#sectionXPAmount{
+    min-height: 50vh;
+}
+
+.divSectionDashboard {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto 1rem auto;
+}
+
+.titreDivDashboard{
+    color: white;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+.information{
+    color: white;
+    font-size: 1.2rem;
+}
+
+#userInformationSide div{
+    text-align: center;
+}
+
+.divGraphAuditRatio{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.divGraphAuditOneRatio{
+    width: 80%;
+    height: 3rem;
+}
+
+.divGraphAuditOneRatio svg{
+    height: 100%;
+    width: 100%;  
+}
+
+.pAuditRatio{
+    color: white;
+}
+
+#pRatio{
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+}
+
+#divGraphXPAmountDashboard{
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+}
+
+
+
+.oneGraphXPAmountDivDashboard svg{
+    width: 100%;
+    min-height: 10%;
+}
+
+.pXPAmount{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+
+#legendGraphSkills{
+
+    width: 50%;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+
+.oneLegendSkills{
+    display: flex;
+    height: 15px;
+    margin-right: 2rem;
+}
+
+.oneLegendSkills p{
+    color: white;
+}
+
+
+.color{
+    width: 25px;
+    height: 100%;
+    margin-right: 0.5rem;
+}

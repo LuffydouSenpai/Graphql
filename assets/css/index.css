@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #1a191c;
+}
+
+#backgroundIMG{
+    z-index: -1;
+    background: url(../img/01-trame.svg) center center / cover;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    position: fixed;
+    /* display: block;
+    unicode-bidi: isolate; */
+}
+
+#sectionLogin{
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;    /* Centrer verticalement */
+    height: 100vh;
+    
+}
+
+#sectionLoginSite{
+    width: 30%;
+    margin: 0 auto;
+    background-color: #272529;
+    height: 30vh;
+}
+
+#login{
+    height: 100%;
+}
+
+#titleLogin{
+    color: #807F7F;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titleLogin h2 {
+    text-align: center;
+    
+}
+
+#divFormLogin{
+    height: 80%;
+}
+
+#formLogin{
+    height: 100%;
+}
+
+#inputIdentifier{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.divInput{
+    display: flex;
+    justify-content: center;
+}
+
+.inputLogin{
+    background-color: #272529;
+    color: #807F7F;
+    width: 80%;
+}
+
+.labelLogin{
+    color: #807F7F;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#divErrorLogin p {
+  color: red;
+  text-align: center;
+}
+
+#buttonSubmit{
+    color: #807F7F;
+    background-color: #272529;
+    width: 20%;
+    padding: 0.7rem 0;
+}
+
+
+
+
+
+
+
+
+
+/* ----------------input Floating--------------- */
+@media screen {
+    .form-floating {
+      position: relative
+    }
+    .form-floating>label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      height: 100%;
+      padding: 1rem .75rem;
+      overflow: hidden;
+      text-align: start;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      pointer-events: none;
+      border: var(--bs-border-width) solid transparent;
+      transform-origin: 0 0;
+      transition: opacity .1s ease-in-out, transform .1s ease-in-out
+    }
+    .form-floating>.form-control {
+      padding: 1rem .75rem
+    }
+    .form-floating>.form-control::placeholder {
+      color: transparent
+    }
+    .form-floating>.form-control:focus {
+      padding-top: 1.625rem;
+      padding-bottom: .625rem
+    }
+    .form-floating>.form-control:focus~label {
+      transform: scale(.85) translateY(-.5rem) translateX(.15rem)
+    }
+    .form-floating>.form-control:focus~label,
+    .form-floating>.form-control:not(:placeholder-shown)~label {
+      transform: scale(.85) translateY(-.5rem) translateX(.15rem)
+    }
+    .form-floating>.form-control:not(:placeholder-shown) {
+      padding-top: 1.625rem;
+      padding-bottom: .625rem
+    }
+}
