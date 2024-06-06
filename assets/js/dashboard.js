@@ -467,7 +467,7 @@ function skillProg(responseData) {
 const divDisconnect = document.getElementById('divDisconnect')
 divDisconnect.addEventListener('click', () => {
     sessionStorage.setItem('userToken', "");
-    window.location.href = `/index.html`;
+    //window.location.href = `/index.html`;
 })
 
 function phoneNumber(params) {
