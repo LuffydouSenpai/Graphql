@@ -22,7 +22,6 @@ async function connectionAPIZone01(url = '', data = {}) {
     } else {
 
         const token = await response.json();
-        console.log(token);
         // Stocker le jeton dans sessionStorage
         sessionStorage.setItem('userToken', token);
         window.location.href = `template/dashboard.html`;
@@ -34,6 +33,7 @@ async function connectionAPIZone01(url = '', data = {}) {
 async function getDataAPIZone01(url = "", query = {}){
 
     const userToken = sessionStorage.getItem('userToken');
+    console.log(userToken);
 
     const response = await fetch(url, {
         method: 'POST',
