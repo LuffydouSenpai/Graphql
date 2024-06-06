@@ -2,11 +2,9 @@ import {
     getDataAPIZone01,
 } from "./api.js";
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem('userToken')) {
-        window.location.href = 'login.html'; // Redirigez vers la page de connexion ou une autre page appropriée
+        window.location.href = '/index.html'; // Redirigez vers la page de connexion ou une autre page appropriée
     } else {
         const userToken = sessionStorage.getItem('userToken');
         console.log("token", userToken);
