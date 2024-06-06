@@ -5,16 +5,7 @@ import {
 document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem('userToken')) {
         window.location.href = '/index.html'; // Redirigez vers la page de connexion ou une autre page appropriée
-    } else {
-        const userToken = sessionStorage.getItem('userToken');
-        console.log("token", userToken);
     }
-
-    // Empêchez le retour en arrière avec le bouton du navigateur
-    window.history.pushState(null, "", window.location.href);        
-    window.onpopstate = function() {
-        window.history.pushState(null, "", window.location.href);
-    };
 });
 
 const urlData = "https://zone01normandie.org/api/graphql-engine/v1/graphql"
