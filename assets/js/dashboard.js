@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const userToken = sessionStorage.getItem('userToken');
         console.log("token", userToken);
     }
+
+    // Empêchez le retour en arrière avec le bouton du navigateur
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
 });
 
 const urlData = "https://zone01normandie.org/api/graphql-engine/v1/graphql"
