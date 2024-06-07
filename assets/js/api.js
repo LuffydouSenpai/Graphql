@@ -33,7 +33,6 @@ async function connectionAPIZone01(url = '', data = {}) {
 async function getDataAPIZone01(url = "", query = {}){
 
     const userToken = sessionStorage.getItem('userToken');
-    
 
     const response = await fetch(url, {
         method: 'POST',

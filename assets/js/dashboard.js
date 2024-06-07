@@ -2,15 +2,16 @@ import {
     getDataAPIZone01,
 } from "./api.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem('userToken')) {
-        window.location.href = '/index.html'; // Redirigez vers la page de connexion ou une autre page appropriée
-    }
-});
+const userToken = sessionStorage.getItem('userToken');
+
+if (userToken == "") {
+    window.location.href = `/index.html`;
+}
 
 const urlData = "https://zone01normandie.org/api/graphql-engine/v1/graphql"
 
-const query = `query{
+
+/* const query = `query{
     user{
       login
       attrs
@@ -21,15 +22,78 @@ const query = `query{
         path
       }
   }
+            ` */
+
+
+const query = `query{
+    user{
+      login
+      attrs
+    }
+  }
             `
 getDataAPIZone01(urlData, query)
     .then(responseData => {
         header(responseData.data.user)
         profileInformation(responseData.data.user)
+
+    })
+
+
+const query2 = `query {
+  transaction(where: { 
+    _or: [
+      { type: { _eq: "up" } },
+      { type: { _eq: "down" } }
+    ]
+  }) {
+    type
+    amount
+    path
+  }
+}
+                `
+
+getDataAPIZone01(urlData, query2)
+    .then(responseData => {
         ratioAudits(responseData.data.transaction)
+    })
+
+
+
+const query3 = `query{
+  transaction(where: { type: { _eq: "xp" }}){
+    type
+    amount
+    path
+  }
+}
+                `
+
+getDataAPIZone01(urlData, query3)
+    .then(responseData => {
         xpAmount(responseData.data.transaction)
+    })
+
+
+
+
+const query4 = `query{
+  transaction(where: { type: { _like: "skill_%" }}){
+    type
+    amount
+    path
+  }
+}
+                `
+
+getDataAPIZone01(urlData, query4)
+    .then(responseData => {
         skillProg(responseData.data.transaction)
     })
+
+
+
 
 
 
@@ -126,6 +190,7 @@ function ratioAudits(responseData) {
     let rationForm = parseFloat(ration.toFixed(1));
 
     document.getElementById('pRatio').innerText = rationForm
+
 }
 
 function xpAmount(responseData) {
@@ -406,7 +471,6 @@ function skillProg(responseData) {
         dataValue.push(element.value)
     });
 
-
     const total = dataValue.reduce((acc, val) => acc + val, 0);
     let cumulativeAngle = 0;
 
@@ -466,7 +530,7 @@ function skillProg(responseData) {
 
 const divDisconnect = document.getElementById('divDisconnect')
 divDisconnect.addEventListener('click', () => {
-    sessionStorage.removeItem('userToken');
+    sessionStorage.setItem('userToken', "");
     window.location.href = `/index.html`;
 })
 
